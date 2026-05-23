@@ -1,0 +1,58 @@
+debug: false
+
+messages:
+  searching: "&aWyszukiwanie: &e%query%"
+  empty-input: "&cWpisz nazwę przedmiotu!"
+  cancelled: "&7Anulowano wyszukiwanie."
+  no-permission: "&cBrak uprawnień!"
+  player-only: "&cTa komenda może być użyta tylko przez gracza!"
+
+# Tekst wyświetlany na wirtualnej tabliczce (4 linie)
+# Użyj & dla kolorów
+sign-gui:
+  line-1: ""
+  line-2: "&6Wpisz nazwe"
+  line-3: "&7przedmiotu"
+  line-4: "&8(Użyj EN nazw)"
+
+search-triggers:
+  axauctions:
+    # Czy ten system jest włączony?
+    enabled: true
+
+    # FILTROWANIE PO TYTULE GUI (opcjonalne)
+    # Jeśli ustawione - plugin sprawdzi czy tytuł inventory ZAWIERA ten tekst
+    # Jeśli puste ("") - plugin NIE będzie sprawdzał tytułu (działa w każdym GUI)
+    #
+    # Przykłady:
+    #   Tytuł GUI: "§6§lAuction House"  → Wpisz: "Auction"
+    #   Tytuł GUI: "Rynek"              → Wpisz: "Rynek"
+    #   Tytuł GUI: "§eAxAuctions"       → Wpisz: "AxAuctions"
+    #
+    # UWAGA: Kody kolorów (§, &) są automatycznie usuwane!
+    inventory-title: "Rynek"
+
+    # TYP ITEMU (Material)
+    # Wpisz dokładnie to co widzisz w logach przy "Material:"
+    # Przykłady: OAK_SIGN, BIRCH_SIGN, SPRUCE_SIGN, COMPASS, PAPER
+    item-type: OAK_SIGN
+
+    # NAZWA ITEMU (bez kolorów!)
+    # Wpisz część lub całą nazwę - plugin znajdzie dopasowanie!
+    # NIE wpisuj kodów kolorów (§, &) i emoji (🔍) - plugin sam je usuwa!
+    #
+    # Przykłady:
+    #   Pełna nazwa w GUI: "🔍 Wyszukaj przedmiot"  → Wpisz: "Wyszukaj"
+    #   Pełna nazwa w GUI: "§e§lSearch Items"      → Wpisz: "Search"
+    #   Pełna nazwa w GUI: "⚡ Szukaj"              → Wpisz: "Szukaj"
+    #
+    # Plugin sprawdza czy nazwa ZAWIERA ten tekst (case-insensitive)
+    display-name: "Wyszukaj"
+
+    # KOMENDA DO WYKONANIA
+    # %query% zostanie zastąpione tym co wpiszesz na tabliczce
+    # Przykłady:
+    #   "ah search %query%"
+    #   "axauctions:ah search %query%"
+    #   "auction search %query%"
+    command: "ah search %query%"

@@ -1,0 +1,14 @@
+name: AxAuctionAddon
+version: '1.0'
+main: org.abysscode.axAuctionAddon.AxAuctionAddon
+api-version: '1.21'
+depend: [AxAuctions]
+commands:
+  axsearch:
+    description: Open a sign GUI to search in AxAuctions
+    usage: /<command> [debug]
+    aliases: [axs]
+permissions:
+  axauctionaddon.debug:
+    description: Allows toggling debug mode
+    default: op
